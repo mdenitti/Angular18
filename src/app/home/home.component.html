@@ -4,9 +4,14 @@
           <h1>{{ title }}</h1>
           <button (click)="increaseCount()" class="btn btn-primary">Increase</button>
            <p>Count: {{ count }}</p>
-  
+            <p>URL api : {{ url }}</p>
            <input type="text" [(ngModel)]="myContent">
            <h2>{{ myContent }}</h2>
+
+           <h3>My Shoppinglist</h3>
+           @for(todo of todos; track todo.id) {
+             <li>{{ todo.title }} - {{ todo.owner }}</li>
+           }
       </div>
     </div>
   </div>

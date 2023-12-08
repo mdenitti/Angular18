@@ -13,9 +13,21 @@ export class HomeComponent {
   count:number = 0;
   title = 'xMas Shopping';
   myContent:string = '';
+  url:string = 'http://localhost:3000/todo';
+  todos:any[] = [];
 
   increaseCount() {
     this.count++;
+  }
+
+  fetchMyData() {
+    fetch(this.url)
+      .then(response => response.json())
+      .then(json => this.todos = json)
+  }
+  
+  ngOnInit() {
+    this.fetchMyData();
   }
 
 }
