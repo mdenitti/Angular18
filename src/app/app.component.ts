@@ -12,12 +12,5 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
 
-  count:number = 0;
-  title = 'xMas Shopping';
-  myContent:string = '';
-
-  increaseCount() {
-    this.count++;
-  }
 
 }
