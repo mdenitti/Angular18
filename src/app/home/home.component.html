@@ -7,10 +7,15 @@
             <p>URL api : {{ url }}</p>
            <input type="text" [(ngModel)]="myContent">
            <h2>{{ myContent }}</h2>
+           <button (click)="postData()" class="btn btn-primary">Post</button>
 
            <h3>My Shoppinglist</h3>
            @for(todo of todos; track todo.id) {
-             <li>{{ todo.title }} - {{ todo.owner }}</li>
+             @if (todo.done) {
+               <li style="text-decoration: line-through;">{{ todo.title }} - {{ todo.owner }}</li>
+             } @else {
+                <li>{{ todo.title }} - {{ todo.owner }}</li>
+             }
            }
       </div>
     </div>

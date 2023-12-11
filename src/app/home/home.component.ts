@@ -13,11 +13,34 @@ export class HomeComponent {
   count:number = 0;
   title = 'xMas Shopping';
   myContent:string = '';
-  url:string = 'http://localhost:3000/todo';
+  url:string = 'http://localhost:3000/presents';
   todos:any[] = [];
 
   increaseCount() {
     this.count++;
+  }
+
+  postData() {
+
+    const options = {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0'},
+      body: JSON.stringify({
+        'title': this.myContent,
+        'owner': 'V',
+        'done': false
+      })
+    };
+    
+    fetch('http://localhost:3000/presents', options)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+        this.fetchMyData();
+        this.myContent = '';
+      })
+      .catch(err => console.error(err));
+
   }
 
   fetchMyData() {
