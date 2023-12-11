@@ -1,11 +1,13 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12">
-          <h1>{{ title }}</h1>
+    
+          <h4>Please increase or decrease your x-mas spririt feeling</h4>
           <button (click)="increaseCount()" class="btn btn-primary">Increase</button>
-           <p>Count: {{ count }}</p>
+          <button (click)="decreaseCount()" class="btn btn-danger m-1">Decrease</button>
+           <p>{{ count }}pt of X-MAS SPIRIT</p>
             <p>URL api : {{ url }}</p>
-           <input type="text" [(ngModel)]="myContent">
+           <input class="form-control mb-1  " type="text" [(ngModel)]="myContent">
            <select class="form-control" [(ngModel)]="user">
              <option value="1">user1</option>
              <option value="2">user2</option>

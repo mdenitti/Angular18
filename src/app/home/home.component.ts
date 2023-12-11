@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomeComponent {
 
+
   count:number = 0;
   title = 'xMas Shopping';
   myContent:string = '';
@@ -19,7 +20,13 @@ export class HomeComponent {
 
   increaseCount() {
     this.count++;
+    localStorage.setItem('count', this.count.toString());
   }
+
+  decreaseCount() {
+    this.count--;
+    localStorage.setItem('count', this.count.toString());
+    }
 
   postData() {
 
@@ -52,6 +59,9 @@ export class HomeComponent {
   
   ngOnInit() {
     this.fetchMyData();
+   // Retrieve count from local storage when the component initializes
+   const storedCount = localStorage.getItem('count');
+   this.count = storedCount !== null ? parseInt(storedCount) : 0;
   }
 
 }
