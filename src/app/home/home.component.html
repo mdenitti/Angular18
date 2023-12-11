@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
       <div class="col-md-12">
-    
+          <h2>X-MAS budget: {{ xmasbudget | currency:'EUR'}}</h2>
           <h4>Please increase or decrease your x-mas spririt feeling</h4>
           <button (click)="increaseCount()" class="btn btn-primary">Increase</button>
           <button (click)="decreaseCount()" class="btn btn-danger m-1">Decrease</button>

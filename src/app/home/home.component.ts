@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
 
-
+  xmasbudget = 20000;
   count:number = 0;
   title = 'xMas Shopping';
   myContent:string = '';
