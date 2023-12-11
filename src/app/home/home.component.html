@@ -16,7 +16,7 @@
            <select class="form-control" [(ngModel)]="user">
             
             @for (user of users; track user.id) {
-              <option [value]="user.name">{{ user.name }}</option>
+              <option name [value]="user.name">{{ user.name }}</option>
             }
              
            </select>

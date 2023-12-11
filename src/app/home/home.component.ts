@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MyUsers } from '../my-users.interface';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,7 @@ export class HomeComponent {
   // obviously we should use a model or an interface
   todos:any[] = [];
   // my users should also be an array of objects
-  users:any[] = [];
+  users:MyUsers[] = [];
 
   // single instance of user i aquire using ngmodel on the select in my view
   user: any;
