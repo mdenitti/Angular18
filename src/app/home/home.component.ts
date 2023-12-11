@@ -15,6 +15,7 @@ export class HomeComponent {
   myContent:string = '';
   url:string = 'http://localhost:3000/presents';
   todos:any[] = [];
+  user: any;
 
   increaseCount() {
     this.count++;
@@ -27,7 +28,7 @@ export class HomeComponent {
       headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0'},
       body: JSON.stringify({
         'title': this.myContent,
-        'owner': 'V',
+        'owner': this.user,
         'done': false
       })
     };

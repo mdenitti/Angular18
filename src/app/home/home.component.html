@@ -6,6 +6,12 @@
            <p>Count: {{ count }}</p>
             <p>URL api : {{ url }}</p>
            <input type="text" [(ngModel)]="myContent">
+           <select class="form-control" [(ngModel)]="user">
+             <option value="1">user1</option>
+             <option value="2">user2</option>
+             <option value="3">user3</option>
+           </select>
+           {{ user }}
            <h2>{{ myContent }}</h2>
            <button (click)="postData()" class="btn btn-primary">Post</button>
 
