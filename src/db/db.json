@@ -53,6 +53,12 @@
       "owner": "V",
       "done": false,
       "id": 9
+    },
+    {
+      "title": "kinder bueno's lage pack",
+      "owner": "Z",
+      "done": false,
+      "id": 10
     }
   ],
   "users": [
@@ -74,7 +80,7 @@
     {
       "id": 4,
       "name": "M",
-      "password": "123" 
+      "password": "123"
     }
   ]
 }
