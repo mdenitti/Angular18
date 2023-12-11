@@ -6,7 +6,12 @@
           <button (click)="increaseCount()" class="btn btn-primary">Increase</button>
           <button (click)="decreaseCount()" class="btn btn-danger m-1">Decrease</button>
            <p>{{ count }}pt of X-MAS SPIRIT</p>
-            <p>URL api : {{ url }}</p>
+          <!--   <p>URL api : {{ url }}</p>
+            <p>URL users : {{ urlUsers }}</p> -->
+            <p>{{ users | json}}</p>
+
+            the json pipe operator 
+
            <input class="form-control mb-1  " type="text" [(ngModel)]="myContent">
            <select class="form-control" [(ngModel)]="user">
              <option value="1">user1</option>
@@ -14,7 +19,7 @@
              <option value="3">user3</option>
            </select>
            {{ user }}
-           <h2>{{ myContent }}</h2>
+           <h2>{{ myContent | uppercase}}</h2>
            <button (click)="postData()" class="btn btn-primary">Post</button>
 
            <h3>My Shoppinglist</h3>
