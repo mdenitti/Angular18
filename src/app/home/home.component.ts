@@ -11,7 +11,6 @@ import { MyUsers } from '../my-users.interface';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
   xmasbudget = 20000;
   count:number = 0;
   title = 'xMas Shopping';
@@ -70,6 +69,21 @@ export class HomeComponent {
     fetch(this.urlUsers)
       .then(response => response.json())
       .then(json => this.users = json)
+  }
+
+  deleteTodo(id: number) {
+    console.log (id)
+    const options = {
+      method: 'DELETE',
+      headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0'}
+    };
+    
+    fetch('http://localhost:3000/presents/'+id, options)
+      .then(response => response.json())
+      .then(response => {
+        this.fetchMyData();
+      })
+      .catch(err => console.error(err));
   }
   
   ngOnInit() {

@@ -27,9 +27,9 @@
            <h3>My Shoppinglist</h3>
            @for(todo of todos; track todo.id) {
              @if (todo.done) {
-               <li style="text-decoration: line-through;">{{ todo.title }} - {{ todo.owner }}</li>
+               <li style="text-decoration: line-through;"><button (click)="deleteTodo(todo.id)" class="btn btn-sm btn-danger">X</button> {{ todo.title }} - {{ todo.owner }}</li>
              } @else {
-                <li>{{ todo.title }} - {{ todo.owner }}</li>
+              <li><button (click)="deleteTodo(todo.id)" class="btn btn-sm btn-danger">X</button> {{ todo.title }} - {{ todo.owner }}</li>
              }
            }
       </div>
