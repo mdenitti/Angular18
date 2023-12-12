@@ -11,21 +11,23 @@ import { MyUsers } from '../my-users.interface';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  xmasbudget = 20000;
-  count:number = 0;
+
+  xmasbudget = 1000;
+  count: number = 0;
   title = 'xMas Shopping';
-  myContent:string = '';
-  url:string = 'http://localhost:3000/presents';
-  urlUsers:string = 'http://localhost:3000/users';
+  myContent: string = '';
+  url: string = 'http://localhost:3000/presents';
+  urlUsers: string = 'http://localhost:3000/users';
 
   // my todos should also be an array of objects - using any as type for now
   // obviously we should use a model or an interface
-  todos:any[] = [];
+  todos: any[] = [];
   // my users should also be an array of objects
-  users:MyUsers[] = [];
-
+  users: MyUsers[] = [];
   // single instance of user i aquire using ngmodel on the select in my view
   user: any;
+  price: any;
+  totalPrice: any;
 
   increaseCount() {
     this.count++;
@@ -35,19 +37,20 @@ export class HomeComponent {
   decreaseCount() {
     this.count--;
     localStorage.setItem('count', this.count.toString());
-    }
+  }
 
   postData() {
     const options = {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0'},
+      headers: { 'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0' },
       body: JSON.stringify({
         'title': this.myContent,
         'owner': this.user,
+        'price': this.price,
         'done': false
       })
     };
-    
+
     fetch('http://localhost:3000/presents', options)
       .then(response => response.json())
       .then(response => {
@@ -56,13 +59,15 @@ export class HomeComponent {
         this.myContent = '';
       })
       .catch(err => console.error(err));
-
   }
 
   fetchMyData() {
     fetch(this.url)
       .then(response => response.json())
-      .then(json => this.todos = json)
+      .then(json => {
+        this.todos = json;
+        this.totalPrice = this.todos.reduce((total, todo) => total + parseFloat(todo.price), 0);
+      })
   }
 
   fetchMyUsers() {
@@ -72,26 +77,43 @@ export class HomeComponent {
   }
 
   deleteTodo(id: number) {
-    console.log (id)
+    console.log(id)
     const options = {
       method: 'DELETE',
-      headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0'}
+      headers: { 'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0' }
     };
-    
-    fetch('http://localhost:3000/presents/'+id, options)
+
+    fetch('http://localhost:3000/presents/' + id, options)
       .then(response => response.json())
       .then(response => {
         this.fetchMyData();
       })
       .catch(err => console.error(err));
   }
-  
+
+  doneTodo(id: number) {
+    const options = {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0' },
+      body: JSON.stringify({
+        'done': true
+      })
+    };
+
+    fetch('http://localhost:3000/presents/' + id, options)
+      .then(response => response.json())
+      .then(response => {
+        this.fetchMyData();
+      })
+      .catch(err => console.error(err));
+  }
+
   ngOnInit() {
     this.fetchMyData();
     this.fetchMyUsers();
-   // Retrieve count from local storage when the component initializes
-   const storedCount = localStorage.getItem('count');
-   this.count = storedCount !== null ? parseInt(storedCount) : 0;
+   
+    // Retrieve count from local storage when the component initializes
+    const storedCount = localStorage.getItem('count');
+    this.count = storedCount !== null ? parseInt(storedCount) : 0;
   }
-
 }
