@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MyUsers } from '../my-users.interface';
+import { Env } from '../env.interface';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,11 @@ export class HomeComponent {
   myContent: string = '';
   url: string = 'http://localhost:3000/presents';
   urlUsers: string = 'http://localhost:3000/users';
+  config: Env = {
+    production: false,
+    api: 'http://localhost:3000',
+    version: "1.0.0"
+  }
 
   // my todos should also be an array of objects - using any as type for now
   // obviously we should use a model or an interface
