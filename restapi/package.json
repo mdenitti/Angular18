@@ -1,0 +1,24 @@
+{
+  "name": "noderestpixmasfamily",
+  "version": "1.0.0",
+  "description": "Node RestAPI FamilyXmasShopping that will be consumed by our angular application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdenitti/angular18.git"
+  },
+  "keywords": [
+    "node",
+    "restapi",
+    "xmas"
+  ],
+  "author": "Massimo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdenitti/angular18/issues"
+  },
+  "homepage": "https://github.com/mdenitti/angular18#readme"
+}
