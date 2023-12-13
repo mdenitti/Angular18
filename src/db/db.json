@@ -16,17 +16,10 @@
     },
     {
       "title": "New present",
-      "owner": "Z",
-      "price": "150",
+      "owner": "A",
+      "price": "100",
       "done": false,
-      "id": 6
-    },
-    {
-      "title": "Newpresent",
-      "owner": "Z",
-      "price": "120",
-      "done": false,
-      "id": 7
+      "id": 5
     }
   ],
   "users": [

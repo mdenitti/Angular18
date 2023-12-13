@@ -15,7 +15,7 @@
       <input class="form-control mb-1  " type="text" [(ngModel)]="myContent" placeholder="New present">
       <input class="form-control mb-1  " type="text" [(ngModel)]="price" placeholder="Price">
       <h3>The family members</h3>
-      <select class="form-control" [(ngModel)]="user">
+      <select class="form-control mb-2" [(ngModel)]="user">
         @for (user of users; track user.id) {
         <option name [value]="user.name">{{ user.name }}</option>
         }
@@ -23,7 +23,7 @@
      <!--  {{ user }} -->
       <!-- <h2>{{ myContent | uppercase}}</h2> -->
 
-      <button (click)="postData()" class="btn btn-primary">Post</button>
+      <button (click)="postData()" class="btn btn-primary mb-2">Post</button>
 
       <h3>My Shoppinglist - {{totalPrice | currency:'EUR'}}</h3>
       @for(todo of todos; track todo.id) {

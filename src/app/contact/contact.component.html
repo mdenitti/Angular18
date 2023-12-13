@@ -1,1 +1,22 @@
-<p>contact works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Our Family</h2>
+            @for(user of users; track user.id) {
+            <li class="listuser">{{ user.name }}</li>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Contact us</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, quod.
+        </p>
+</div>
+
+<!-- {{ users | json }} -->

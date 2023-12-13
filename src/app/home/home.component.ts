@@ -67,6 +67,8 @@ export class HomeComponent {
         console.log(response);
         this.fetchMyData();
         this.myContent = '';
+        this.price = '';
+        this.toastr.success('Succes', 'A new present has been added!');
       })
       .catch(err => console.error(err));
   }
@@ -97,6 +99,7 @@ export class HomeComponent {
       .then(response => response.json())
       .then(response => {
         this.fetchMyData();
+        this.toastr.error('GONE!', 'The present has been deleted!');
       })
       .catch(err => console.error(err));
   }
@@ -119,10 +122,9 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+    
     this.fetchMyData();
     this.fetchMyUsers();
-   
     // Retrieve count from local storage when the component initializes
     const storedCount = localStorage.getItem('count');
     this.count = storedCount !== null ? parseInt(storedCount) : 0;
