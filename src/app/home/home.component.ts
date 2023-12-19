@@ -14,6 +14,7 @@ import { ToastrService } from 'ngx-toastr'
 })
 export class HomeComponent {
 
+
   xmasbudget = 1000;
   count: number = 0;
   title = 'xMas Shopping';
@@ -36,8 +37,13 @@ export class HomeComponent {
   user: any;
   price: any;
   totalPrice: any;
+  mail: any;
 
   constructor(private toastr: ToastrService) { }
+
+  sendMail() {
+    throw new Error('Method not implemented.');
+    }
 
   increaseCount() {
     this.count++;
