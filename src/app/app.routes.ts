@@ -7,6 +7,8 @@ import { ContactComponent } from  './contact/contact.component';
 // import auth guard and login component
 import { authGuard } from  './auth.guard';
 import { LoginComponent } from  './login/login.component';
+import { Component } from '@angular/core';
+import { DetailsComponent } from './details/details.component';
 
 // Also create a login route and secure with [authGuard]!
 export  const  routes:  Routes  = [
@@ -31,5 +33,14 @@ export  const  routes:  Routes  = [
 	{
 	path: 'login',
 	component: LoginComponent
+	},
+	{
+	path: 'details',
+	component: DetailsComponent
+	},
+	{
+	path: 'details/:id',
+	component: DetailsComponent
 	}
+
 ];

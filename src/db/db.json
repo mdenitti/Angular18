@@ -8,13 +8,6 @@
       "done": true
     },
     {
-      "title": "drone",
-      "owner": "M",
-      "price": 100,
-      "done": true,
-      "id": 4
-    },
-    {
       "title": "New present",
       "owner": "A",
       "price": "100",
