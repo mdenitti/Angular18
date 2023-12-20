@@ -13,28 +13,50 @@
       "price": "100",
       "done": false,
       "id": 5
+    },
+    {
+      "title": "sdfsdf",
+      "owner": "Z",
+      "price": "2100",
+      "done": false,
+      "id": 6
     }
   ],
   "users": [
     {
       "id": 1,
-      "name": "V",
+      "username": "V",
       "password": "123"
     },
     {
       "id": 2,
-      "name": "Z",
+      "username": "Z",
       "password": "123"
     },
     {
       "id": 3,
-      "name": "A",
+      "username": "A",
       "password": "123"
     },
     {
       "id": 4,
-      "name": "M",
+      "username": "M",
       "password": "123"
+    },
+    {
+      "username": "dssdf",
+      "password": "sdfdfsdfsf",
+      "id": 5
+    },
+    {
+      "username": "dsfdsfsdf",
+      "password": "dsfdsfdsf",
+      "id": 6
+    },
+    {
+      "username": "mynewuser",
+      "password": "thisismypassword",
+      "id": 7
     }
   ]
 }

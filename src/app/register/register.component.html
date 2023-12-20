@@ -1,0 +1,11 @@
+<!-- src/app/register/register.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <h1>Register</h1>
+      <input type="text" class="form-control" [(ngModel)]="username" />
+      <input type="text" class="form-control" [(ngModel)]="password" />
+      <button class="btn btn-primary mt-2" (click)="onSubmit()" type="submit">Register</button>
+    </div>
+  </div>
+</div>
