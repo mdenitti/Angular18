@@ -57,6 +57,11 @@
       "username": "mynewuser",
       "password": "thisismypassword",
       "id": 7
+    },
+    {
+      "username": "fsdfsd",
+      "password": "$2a$10$6ZjG5nozEHQVKv8FYfPXZeEn2NlkncUsLLurgT50uHoO4wmiWgXhy",
+      "id": 8
     }
   ]
 }

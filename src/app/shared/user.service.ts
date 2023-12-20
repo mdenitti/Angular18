@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 
 
 @Injectable({
