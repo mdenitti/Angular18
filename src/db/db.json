@@ -26,42 +26,27 @@
     {
       "id": 1,
       "username": "V",
-      "password": "123"
+      "password": "$2a$10$jNARe3yggkdP0PYEBcmIz.4JOzfe1yHALSqcnpjBUfg14JV6a7pGi"
     },
     {
       "id": 2,
       "username": "Z",
-      "password": "123"
+      "password": "$2a$10$jNARe3yggkdP0PYEBcmIz.4JOzfe1yHALSqcnpjBUfg14JV6a7pGi"
     },
     {
       "id": 3,
       "username": "A",
-      "password": "123"
+      "password": "$2a$10$jNARe3yggkdP0PYEBcmIz.4JOzfe1yHALSqcnpjBUfg14JV6a7pGi"
     },
     {
       "id": 4,
       "username": "M",
-      "password": "123"
+      "password": "$2a$10$jNARe3yggkdP0PYEBcmIz.4JOzfe1yHALSqcnpjBUfg14JV6a7pGi"
     },
     {
-      "username": "dssdf",
-      "password": "sdfdfsdfsf",
+      "username": "M",
+      "password": "$2a$10$jfahDyZVYWl41u2fT5w48.b.DZPkgspxKS5gbbz2BjQXNIT5fEB/K",
       "id": 5
-    },
-    {
-      "username": "dsfdsfsdf",
-      "password": "dsfdsfdsf",
-      "id": 6
-    },
-    {
-      "username": "mynewuser",
-      "password": "thisismypassword",
-      "id": 7
-    },
-    {
-      "username": "fsdfsd",
-      "password": "$2a$10$6ZjG5nozEHQVKv8FYfPXZeEn2NlkncUsLLurgT50uHoO4wmiWgXhy",
-      "id": 8
     }
   ]
 }
