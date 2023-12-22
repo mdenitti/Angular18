@@ -14,9 +14,14 @@ export class RegisterComponent {
 
   password: any;
   username: any;
+  showPassword: boolean = false;
 
   constructor(private userService: UserService, private toastr: ToastrService) {
-    
+
+  }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
   }
 
   onSubmit() {
@@ -30,8 +35,8 @@ export class RegisterComponent {
     // clear the fields;
     this.username = '';
     this.password = '';
-  
-}
+
+  }
 
 
 

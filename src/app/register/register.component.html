@@ -4,8 +4,9 @@
     <div class="col-md-12">
     <h1>Register</h1>
       <input type="text" class="form-control" [(ngModel)]="username" />
-      <input type="text" class="form-control" [(ngModel)]="password" />
+      <input type="{{showPassword ? 'text' : 'password'}}" class="form-control" [(ngModel)]="password" />
       <button class="btn btn-primary mt-2" (click)="onSubmit()" type="submit">Register</button>
+      <button class="btn btn-dark mt-2" (click)="togglePasswordVisibility()">Show password</button>
     </div>
   </div>
 </div>
