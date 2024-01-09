@@ -13,6 +13,25 @@ import { ToastrService } from 'ngx-toastr'
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+myImage: string | undefined;
+
+onFileSelected(event: Event) {
+  const input = event.target as HTMLInputElement;
+  if (!input.files?.length) return;
+
+  const file = input.files[0];
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const base64String = btoa(reader.result as string);
+    this.uploadImage(base64String);
+  };
+  reader.readAsBinaryString(file);
+}
+
+uploadImage(base64String: string) {
+  // Implementation to send the base64 string to your API.
+  this.myImage = base64String;
+}
 
 
   xmasbudget = 1000;
@@ -60,10 +79,11 @@ export class HomeComponent {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0' },
       body: JSON.stringify({
-        'title': this.myContent,
-        'owner': this.user,
-        'price': this.price,
-        'done': false
+        title: this.myContent,
+        owner: this.user,
+        price: this.price,
+        done: false,
+        img: this.myImage
       })
     };
 

@@ -14,6 +14,7 @@
       <h3>The present</h3>
       <input class="form-control mb-1  " type="text" [(ngModel)]="myContent" placeholder="New present">
       <input class="form-control mb-1  " type="text" [(ngModel)]="price" placeholder="Price">
+      <input class="form-control mb-1  "type="file"  (change)="onFileSelected($event)"  />
       <h3>The family members</h3>
       <select class="form-control mb-2" [(ngModel)]="user">
         @for (user of users; track user.id) {
@@ -29,12 +30,14 @@
       @for(todo of todos; track todo.id) {
       @if (todo.done) {
       <li style="text-decoration: line-through; color: rgb(205, 205, 205)">
+        <img src="data:image/png;base64,{{todo.img}}" width='70px'>
         <button (click)="doneTodo(todo.id)" class="btn btn-sm btn-success m-1">Done</button>
         <button (click)="deleteTodo(todo.id)" class="btn btn-sm btn-danger">X</button> {{ todo.title }} - {{
         todo.owner }} - {{ todo.price }} EUR
       </li>
       } @else {
       <li>
+        <img src="data:image/png;base64,{{todo.img}}" width='70px'>
         <button (click)="doneTodo(todo.id)" class="btn btn-sm btn-success m-1">Done</button>
         <button (click)="deleteTodo(todo.id)" class="btn btn-sm btn-danger">X</button> {{ todo.title }} - {{
         todo.owner }}  - <span class="eur">{{ todo.price }} EUR</span>
