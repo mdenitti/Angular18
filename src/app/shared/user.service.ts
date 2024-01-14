@@ -14,7 +14,7 @@ export class UserService {
 		username: username,
 		password: hashedPassword
 	};
-	const result = await fetch('http://localhost:3000/users', {
+	const result = await fetch('http://localhost:8000/api/users', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ export class UserService {
 	// Returns all users
 
 	async getUsers() {
-		return (await fetch('http://localhost:3000/users')).json()
+		return (await fetch('http://localhost:8000/api/users')).json()
 	}
 
 	// Checks user credentials and returns a valid token or null

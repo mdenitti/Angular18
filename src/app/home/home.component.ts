@@ -38,11 +38,11 @@ uploadImage(base64String: string) {
   count: number = 0;
   title = 'xMas Shopping';
   myContent: string = '';
-  url: string = 'http://localhost:3000/presents';
-  urlUsers: string = 'http://localhost:3000/users';
+  url: string = 'http://127.0.0.1:8000/api/presents';
+  urlUsers: string = 'http://127.0.0.1:8000/api/users';
   config: Env = {
     production: false,
-    api: 'http://localhost:3000',
+    api: 'http://127.0.0.1:8000/api',
     version: "1.0.0"
     
   }
