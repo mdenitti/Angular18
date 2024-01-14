@@ -16,10 +16,10 @@
       <input class="form-control mb-1  " type="text" [(ngModel)]="price" placeholder="Price">
       <input class="form-control mb-1  "type="file"  (change)="onFileSelected($event)"  />
       <h3>The family members</h3>
-      {{ users | json }}
+      <!-- {{ users | json }} -->
       <select class="form-control mb-2" [(ngModel)]="user">
         @for (user of users; track user.id) {
-        <option name [value]="user.username">{{ user.username }}</option>
+        <option name [value]="user.username">{{ user.name }}</option>
         }
       </select>
      <!--  {{ user }} -->
