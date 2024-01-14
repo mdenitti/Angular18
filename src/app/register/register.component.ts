@@ -15,6 +15,7 @@ export class RegisterComponent {
   password: any;
   username: any;
   showPassword: boolean = false;
+  email: any;
 
   constructor(private userService: UserService, private toastr: ToastrService) {
 
@@ -29,12 +30,13 @@ export class RegisterComponent {
     console.log(this.password);
 
     // acces the service and send username and password
-    this.userService.register(this.username, this.password);
+    this.userService.register(this.username, this.password, this.email);
     this.toastr.success('You have registered', 'Yay');
 
     // clear the fields;
     this.username = '';
     this.password = '';
+    this.email = '';
 
   }
 
