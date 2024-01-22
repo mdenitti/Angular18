@@ -41,6 +41,22 @@ export class UserService {
 		return (await fetch('http://localhost:8000/api/users')).json()
 	}
 
+	// delete user
+/* 
+	async deleteUser(id: number) {
+		return (await fetch('http://localhost:8000/api/users/' + id, {
+			method: 'DELETE'
+		})).json()
+	} */
+
+	// delete user with fetch() method no async await
+
+	deleteUserFetch(id: number) {
+		fetch('http://localhost:8000/api/users/' + id, {
+			method: 'DELETE'
+		})
+	}
+
 	// Checks user credentials and returns a valid token or null
 	async login(username: string, password: string) {
 		let users = await this.getUsers();
